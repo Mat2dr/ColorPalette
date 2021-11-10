@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 /*--------- DOM ELEMENTS ---------*/
 
 const colorDivs = document.querySelectorAll('.color');
@@ -51,5 +49,8 @@ function checkTextContrast(color, text) {
     }
 }
 
+function colorizeSliders(color, hue, brightness, saturation) {
+    
+}
+
 randomColors();
->>>>>>> Stashed changes
