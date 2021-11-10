@@ -45,12 +45,12 @@ svg {
   position: absolute;
   bottom: 0%;
   background-color: rgb(255, 255, 255);
-  pointer-events: none;
-  opacity: 0;
+  /* pointer-events: none; */
+  /* opacity: 0; */
   padding: 1rem;
   border-radius: 1rem;
   /*adjustement class for animation*/
-  transform: translateY(100px);
+  /* transform: translateY(100px); */
   transition: all 0.5s ease-in-out;
 }
 .sliders button {
@@ -114,4 +114,14 @@ svg {
   font-weight: bold;
   margin: 15px 0px;
   background: none;
+}
+
+/* Slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 1rem 0rem;
+  width: 100%;
+  position: relative;
+  border-radius: 1rem;
+  cursor: pointer;
 }
