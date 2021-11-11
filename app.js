@@ -50,7 +50,18 @@ function checkTextContrast(color, text) {
 }
 
 function colorizeSliders(color, hue, brightness, saturation) {
-    
+    //Scale Saturation
+    const noSat = color.set('hsl.s', 0);
+    const fullSat = color.set('hsl.s', 1);
+    const scaleSat = chroma.scale([noSat, color, fullSat]);
+    //Scale Brightness
+    const midBright = color.set('hsl.l', 0.5);
+    const scaleBright = chroma.scale(["black", midBright, "white"]);
+
+    //Update Input Colors
+    saturation.style.backgroundImage = `linear-gradient(to right, ${scaleSat(0)}, ${scaleSat(1)})`;
+    brightness.style.backgroundImage = `linear-gradient(to right, ${scaleBright(0)}, ${scaleBright(0.5)}, ${scaleBright(1)})`;
+    hue.style.backgroundImage = `linear-gradient(to right, #FF0000, #FFFF00, #00FF00, #00FFFF, #0000FF, #FF00FF, #FF0000)`;
 }
 
 randomColors();
