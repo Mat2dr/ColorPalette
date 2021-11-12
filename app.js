@@ -220,6 +220,7 @@ const submitSave = document.querySelector(".submit-save");
 const closeSave = document.querySelector(".close-save");
 const saveContainer = document.querySelector(".save-container");
 const saveInput = document.querySelector(".save-container input");
+const libraryContainer = document.querySelector(".library-container");
 
 
 //Event listeners
@@ -253,6 +254,25 @@ function savePalette(e) {
     //Saved to local storage
     savetoLocal(paletteObj);
     saveInput.value = "";
+    //generate the palette for library
+    const palette = document.createElement("div");
+    palette.classList.add("custom-palette");
+    const title = document.createElement("h4");
+    title.innerText = paletteObj.name;
+    const preview = document.createElement(div);
+    preview.classList.add("small-preview");
+    paletteObj.colors.forEach(smallColor => {
+        const smallDiv = document.createElement('div');
+        smallDiv.style.backgroundColor = smallColor;
+        preview.appendChild(smallDiv);
+    });
+    const paletteBtn = document.createElement("button");
+    paletteBtn.classList.add("pick-palette-btn");
+    paletteBtn.classList.add(paletteObj.nr);
+    palette.innerText = "Select";
+
+
+    // Append to library
 };
 
 function savetoLocal(paletteObj){
