@@ -221,6 +221,9 @@ const closeSave = document.querySelector(".close-save");
 const saveContainer = document.querySelector(".save-container");
 const saveInput = document.querySelector(".save-container input");
 const libraryContainer = document.querySelector(".library-container");
+const libraryBtn = document.querySelector(".library");
+const closeLibraryBtn = document.querySelector(".close-library");
+
 
 
 //Event listeners
@@ -272,7 +275,8 @@ function savePalette(e) {
     palette.innerText = "Select";
 
 
-    // Append to library
+    //Append to library
+    
 };
 
 function savetoLocal(paletteObj){
