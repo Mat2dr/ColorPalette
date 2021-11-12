@@ -13,6 +13,7 @@ let initialColors;
 
 /*--------- EVENTS ---------*/
 generateBtn.addEventListener("click", randomColors);
+
 sliders.forEach(slider => {
     slider.addEventListener("input", hslControls);
 });
@@ -48,12 +49,23 @@ closeAdjustments.forEach((button, index) => {
     });
 });
 
+lockButton.forEach((button, index) => {
+    button.addEventListener(`click`, () => {
+      addLockClass(button, index);
+    });
+  });
+
 /*--------- FUNCTIONS ---------*/
 
 //Color Generator
 function generateHex() {
     const hexColor = chroma.random();
     return hexColor;
+}
+function addLockClass(button, index) {
+    colorDivs[index].classList.toggle(`locked`);
+    lockButton[index].firstChild.classList.toggle(`fa-lock-open`);
+    lockButton[index].firstChild.classList.toggle(`fa-lock`);
 }
 
 function randomColors() {
@@ -65,7 +77,12 @@ function randomColors() {
         const randomColor = generateHex();
 
         //Add it to the array
-        initialColors.push(chroma(randomColor).hex());
+        if(div.classList.contains('locked')) {
+            initialColors.push(hexText.innerText);
+            return;
+        } else {
+            initialColors.push(chroma(randomColor).hex());
+        }
 
         //Add the color to the background
         div.style.backgroundColor = randomColor;
