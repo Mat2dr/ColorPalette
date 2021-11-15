@@ -7,7 +7,7 @@ const currentHexes = document.querySelectorAll('.color h2');
 const popup = document.querySelector('.copy-container');
 const adjustButton = document.querySelectorAll('.adjust');
 const lockButton = document.querySelectorAll('.lock');
-const closeAdjustments = document.querySelectorAll(".close-adjustment");
+const closeAdjustments = document.querySelectorAll(".close-adjustement");
 const sliderContainers = document.querySelectorAll(".sliders");
 let initialColors;
 //This is for local storage
@@ -280,8 +280,9 @@ function savePalette(e) {
     });
     const paletteBtn = document.createElement("button");
     paletteBtn.classList.add("pick-palette-btn");
+    paletteBtn.innerText = "Select";
     paletteBtn.classList.add(paletteObj.nr);
-    palette.innerText = "Select";
+    paletteBtn.innerText = Select;
 
     //Attach event to the btn
     paletteBtn.addEventListener('click', e => {
@@ -295,7 +296,6 @@ function savePalette(e) {
             checkTextContrast(color, text);
             updateTextUI(index);
         });
-        libraryInputUpdate();
         resetInputs();
     });
 
@@ -367,7 +367,6 @@ function getLocal() {
                     checkTextContrast(color, text);
                     updateTextUI(index);
                 });
-                libraryInputUpdate();
                 resetInputs();
             });
 

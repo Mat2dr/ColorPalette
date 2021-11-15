@@ -16,6 +16,7 @@ path,
 i,
 svg {
   pointer-events: none;
+  font-size: 25px;
 }
 
 .colors {
@@ -173,7 +174,6 @@ input[type="range"] {
   transform: translateY(0rem);
 }
 
-
 .save-name {
   font-size: 1.5rem;
   padding: 1rem;
@@ -229,4 +229,3 @@ input[type="range"] {
   background: rgb(41, 41, 41);
   color: white;
 }
-
